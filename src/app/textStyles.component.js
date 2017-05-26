@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var window_Service_1 = require("./services/window.Service");
+var window_service_1 = require("./services/window.service");
 var shared_service_1 = require("./shared/shared.service");
 var TextStylesComponent = (function () {
     function TextStylesComponent(winRef, selectedEle) {
@@ -31,7 +31,7 @@ TextStylesComponent = __decorate([
             '(window:resize)': 'onResize($event)'
         }
     }),
-    __metadata("design:paramtypes", [window_Service_1.WindowRef, shared_service_1.SelectedElement])
+    __metadata("design:paramtypes", [window_service_1.WindowRef, shared_service_1.SelectedElement])
 ], TextStylesComponent);
 exports.TextStylesComponent = TextStylesComponent;
 //# sourceMappingURL=textStyles.component.js.map
