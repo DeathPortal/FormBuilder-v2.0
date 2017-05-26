@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var window_Service_1 = require("./services/window.Service");
+var window_service_1 = require("./services/window.service");
 var shared_service_1 = require("./shared/shared.service");
 var MenuBarComponent = (function () {
     function MenuBarComponent(winRef, selectedEle) {
@@ -61,9 +61,9 @@ MenuBarComponent = __decorate([
         host: {
             '(window:resize)': 'onResize($event)'
         },
-        providers: [window_Service_1.WindowRef]
+        providers: [window_service_1.WindowRef]
     }),
-    __metadata("design:paramtypes", [window_Service_1.WindowRef, shared_service_1.SelectedElement])
+    __metadata("design:paramtypes", [window_service_1.WindowRef, shared_service_1.SelectedElement])
 ], MenuBarComponent);
 exports.MenuBarComponent = MenuBarComponent;
 //# sourceMappingURL=menuBar.component.js.map

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
-import { WindowRef } from './services/window.Service';
+import { WindowRef } from './services/window.service';
 import { SelectedElement } from './shared/shared.service';
 @Component({
     selector: "top-menu",
