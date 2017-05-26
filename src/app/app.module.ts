@@ -22,7 +22,7 @@ import { AttributeComponent } from './attr.component';
 import { StyleComponent } from './style.component';
 import { CSSProp } from './shared/css.prop';
 import { ModalComponent } from './tools/modal.component';
-import 'jqueryui'
+
 
 @NgModule({
   imports:      [ CommonModule,
