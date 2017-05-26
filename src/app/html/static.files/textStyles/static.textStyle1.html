@@ -1,0 +1,15 @@
+            <div class="col-4" style="padding:2px;">
+                <button [style.outline] = "bold=='bold'? '2px solid #777': ''" (click) = "boldToggle();" class="btn btn-default responsive-font" [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}">
+                   <span class="fa fa-bold"></span>
+                </button>
+            </div>
+            <div class="col-4" style="padding:2px;">
+                <button [style.outline] = "italic=='italic'? '2px solid #777': ''" (click) = "italicToggle();" class="btn btn-default responsive-font" [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}">
+                   <span class="fa fa-italic"></span>
+                </button>
+            </div>
+            <div class="col-4" style="padding:2px;">
+                <button [style.outline] = "underline=='underline'? '2px solid #777': ''" (click) = "underlineToggle();" class="btn btn-default responsive-font" [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}">
+                   <span class="fa fa-underline"></span>
+                </button>
+            </div>

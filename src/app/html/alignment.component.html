@@ -1,0 +1,18 @@
+<div *ngIf="windowSize > 750" style="margin-left: 30px; width:100px;">
+    <span style="width:100%; text-align: center;">Alignment</span>
+        <horizontal-alignment [selectedEle] = 'selectedEle'></horizontal-alignment>
+        <vertical-alignment [selectedEle] = 'selectedEle'></vertical-alignment>
+        
+</div>
+
+<div style="margin-left: 10px; width:90px; height: 100%; padding: 5px;" *ngIf="windowSize <= 750">
+    <div class="dropdown" style="width: 120px; height: 80%;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" (click)="showBorder = !showBorder" aria-haspopup="true" aria-expanded="false" style="width: 90px; height: 100%; padding:2px; font-size: 12px;">
+                    Alignment
+                </button>
+                <div [hidden]="!showBorder" class="menu-dropdown"  aria-labelledby="dropdownMenuButton" style="width: 100px; padding-left: 20px;">
+                    <horizontal-alignment [selectedEle] = 'selectedEle'></horizontal-alignment>
+                    <vertical-alignment [selectedEle] = 'selectedEle'></vertical-alignment>
+                </div>
+             </div>
+</div>

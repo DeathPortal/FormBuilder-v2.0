@@ -1,0 +1,6 @@
+
+
+                <div (click) = "openColorPicker();" class="responsive-size" style="padding:0px; border: 2px solid black; background-image: url(/app/img/checkers.png); background-repeat: no-repeat; background-size: 100%;">
+                   <div (click) = "openColorPicker();" [style.background] = "bgcolor" style="width: 100%; height: 100%; "></div>
+                   <colorpicker class="responsive-position" [hidden]="!colorPicker"  (response)="processResponse($event)"></colorpicker>
+                </div>

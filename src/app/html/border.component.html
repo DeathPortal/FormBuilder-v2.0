@@ -1,0 +1,47 @@
+<div *ngIf = "windowSize > 1400" style="width:250px;">
+    <div class="row">
+        <border-static [selectedEle] = 'selectedEle' ></border-static>
+    </div><br>
+    <div class="row">
+        <border-radius-static [selectedEle] = 'selectedEle' ></border-radius-static>
+    </div>
+</div>
+<div class="row" *ngIf = "windowSize <= 1400 && windowSize > 600" style="width:170px; height: 100%;">
+    <div class="col">
+             <div class="dropdown" style="width: 120px; height: 100%;">
+                <button class="btn btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" (click)="showBorder = !showBorder" aria-haspopup="true" aria-expanded="false" style="width: 150px; height: 80%;">
+                    Border Style
+                </button>
+                <div [hidden]="!showBorder" class="menu-dropdown menu-dropdown-left"  aria-labelledby="dropdownMenuButton" style="width: 200px; padding-left: 20px;">
+                     <div class="row">
+                        <border-static [selectedEle] = 'selectedEle' ></border-static>
+                    </div>
+                </div>
+             </div>
+    </div>
+    <div class="col">
+             <div class="dropdown" style="width:120px; height: 100%;">
+                <button class="btn btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" (click)="showBorderRadius = !showBorderRadius" aria-haspopup="true" aria-expanded="false" style="width:150px; height: 80%;">
+                    Border Radius
+                </button>
+                <div [hidden]="!showBorderRadius" class="menu-dropdown menu-dropdown-left" aria-labelledby="dropdownMenuButton" style="width: 270px; padding-left: 20px;">
+                      <border-radius-static [selectedEle] = 'selectedEle' ></border-radius-static>
+                </div>
+             </div>
+    </div>
+</div>
+<div class="row" *ngIf = "windowSize <= 600" style="height: 100%; padding:5px;padding-left: 10px;">
+    <div class="col">
+             <div class="dropdown" style="width: 80px; height: 80%;">
+                <button class="btn btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" (click)="showBorder = !showBorder" aria-haspopup="true" aria-expanded="false" style="width: 80px; height: 100%;">
+                    Border
+                </button>
+                <div [hidden]="!showBorder" class="menu-dropdown menu-dropdown-left"  aria-labelledby="dropdownMenuButton" style="width: 270px; padding-left: 20px;">
+                     <div class="row">
+                        <border-static [selectedEle] = 'selectedEle' style="padding:20px;" ></border-static>
+                         <border-radius-static [selectedEle] = 'selectedEle' style="padding-left:20px;" ></border-radius-static>
+                    </div>
+                </div>
+             </div>
+    </div>
+</div>

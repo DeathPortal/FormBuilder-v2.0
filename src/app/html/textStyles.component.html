@@ -1,0 +1,36 @@
+<div *ngIf="windowSize > 900" style="margin-left:50px; width:250px;" >
+        <textstyle-font [selectedEle] = 'selectedEle'></textstyle-font>
+        <br>
+        <div class="row"><div class="col"><textstyle1-style [selectedEle] = 'selectedEle' class="row"></textstyle1-style></div><div class="col"><textstyle2-style [selectedEle] = 'selectedEle' class="row"></textstyle2-style></div></div>
+</div>
+<div class="row" *ngIf="windowSize <= 900 && windowSize >680px"  style="margin-left:20px; width:150px;">
+    <div class="col">
+         <div class="dropdown" style="width: 110px; height: 100%;">
+                <button class="btn btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" (click)="showFontFamily = !showFontFamily" aria-haspopup="true" aria-expanded="false" style="width: 90px; height: 100%;">
+                    Font
+                </button>
+                <div [hidden]="!showFontFamily" class="menu-dropdown"  aria-labelledby="dropdownMenuButton" style="width: 250px; padding-left: 20px;">
+                     <textstyle-font [selectedEle] = 'selectedEle'></textstyle-font>
+                </div>
+             </div>
+    </div>
+    <div class="col">
+        <textstyle1-style [selectedEle] = 'selectedEle' class="row"></textstyle1-style>
+        <textstyle2-style [selectedEle] = 'selectedEle' class="row"></textstyle2-style>
+    </div>
+</div>
+
+<div class="row" *ngIf="windowSize <= 680px"  style="margin-left:0px; width:110px; height: 100%;  padding: 5px;">
+    <div class="col">
+         <div class="dropdown" style="width: 110px; height: 80%;">
+                <button class="btn btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" (click)="showFontFamily = !showFontFamily" aria-haspopup="true" aria-expanded="false" style="width: 70px; height: 100%; padding:2px;">
+                    Font
+                </button>
+                <div [hidden]="!showFontFamily" class="menu-dropdown"  aria-labelledby="dropdownMenuButton" style="width: 250px; padding-left: 20px;">
+                    <textstyle-font [selectedEle] = 'selectedEle'></textstyle-font>
+                    <br>
+                    <div class="row"><div class="col-4"><textstyle1-style [selectedEle] = 'selectedEle' class="row"></textstyle1-style></div><div class="col-4"><textstyle2-style [selectedEle] = 'selectedEle' class="row"></textstyle2-style></div></div>
+                </div>
+             </div>
+    </div>
+</div>

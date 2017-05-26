@@ -1,0 +1,14 @@
+<div class="form-inline" style="position: relative; z-index: 10;">
+             <edge-label [label]="['Border &nbsp;','Border ','']" class="responsive-font" style="display: table-cell; vertical-align: middle;"></edge-label>
+            <input [(ngModel)] = "borderSize" class="form-control responsive-font" type="number" style="width:40px; font-size: 12px; padding:4px;" (change) = "changeBorderSize();"><units-menu [refPath]="['style','borderWidth']" (response)="processResponse($event)"></units-menu>
+            <div ngbDropdown class="dropdown" style="width:70px; padding-right: 10px;">
+                <button class="btn btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle style="width:70px; padding:2px; padding-right:5px;">
+                    {{selectedBorder}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:100px; min-width:50px; padding:20px;">
+                     <div *ngFor="let border of borders" [style.borderStyle]="border" style="width: 5px; border-width: 5px; margin-bottom: 3px;" class="dropdown-item" (click) = "changeBorderStyle(border);"> &nbsp; &nbsp;</div><hr>
+
+                </div>
+             </div>
+             <color-tool (response)="processResponse($event);" [defaultColor]="['style','borderColor']" style="padding:2px;" ></color-tool>
+        </div>

@@ -1,0 +1,17 @@
+<div class="row" [style.height]="windowSize<=500?'100%':''">
+           <div class="col-3" style="padding:2px;">
+               <button [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}" [style.outline] = "align=='flex-start'? '2px solid #777': ''" class="btn btn-default" style="padding:3px;" (click) = "verticalAlign('flex-start');">
+                   <img class="responsive-icon" src="app/img/vertical up alignment.png" width="16" height="16"/>
+                </button>
+            </div>
+            <div class="col-3" style="padding:2px;">
+                 <button [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}" [style.outline] = "align=='center'? '2px solid #777': ''" class="btn btn-default" style="padding:3px;" (click) = "verticalAlign('center');">
+                     <img class="responsive-icon" src="app/img/vertical center alignment.png" width="16" height="16"/>
+                </button>
+            </div>
+            <div class="col-3" style="padding:2px;">
+                <button [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}" [style.outline] = "align=='flex-end'? '2px solid #777': ''" class="btn btn-default" style="padding:3px;" (click) = "verticalAlign('flex-end');">
+                     <img class="responsive-icon" src="app/img/vertical bottom alignment.png" width="16" height="16"/>
+                </button>
+            </div>
+        </div>

@@ -1,0 +1,15 @@
+<div class="row">
+            <span class="responsive-font" style="width: 100%; text-align: center;">Margins
+                <div class="dropdown-divider"></div>
+            </span>
+            <table>
+                <tr>
+                <td><edge-label [label]="label[0]"></edge-label></td><td><input [(ngModel)] = "marginTop" (change) = "changeMargin()" class="form-control" type="text" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','marginTop']" (response)="processResponseTop($event)"></units-menu></td>
+                <td><edge-label [label]="label[1]"></edge-label></td><td><input [(ngModel)] = "marginBottom" (change) = "changeMargin()" class="form-control" type="text" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','marginBottom']" (response)="processResponseBottom($event)"></units-menu></td>
+                </tr>
+                <tr>
+                <td><edge-label [label]="label[2]"></edge-label></td><td><input [(ngModel)] = "marginLeft" (change) = "changeMargin()" class="form-control" type="text" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','marginLeft']" (response)="processResponseLeft($event)"></units-menu></td>
+                <td><edge-label [label]="label[3]"></edge-label></td><td><input [(ngModel)] = "marginRight" (change) = "changeMargin()" class="form-control" type="text" style="width:40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','marginRight']" (response)="processResponseRight($event)"></units-menu></td>
+                </tr>
+            </table>
+        </div>

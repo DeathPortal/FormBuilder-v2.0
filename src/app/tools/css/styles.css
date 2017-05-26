@@ -1,0 +1,99 @@
+.nav-item{
+    cursor: pointer;
+}
+
+.no-padding{
+    padding: 0px;
+}
+.no-dropdown::after {
+    display:none !important;
+}
+
+
+.item-dropdown{
+    width:100%;
+    padding: 3px 1.5rem;
+    font-weight: normal;
+    color: #292b2c;
+    text-align: inherit;
+    white-space: nowrap;
+    background: none;
+    border: 0;
+    display: block;
+    cursor: pointer;
+}
+
+.menu-dropdown{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #292b2c;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+.menu-dropdown-left {
+  right: 0;
+  left: auto;
+}
+
+.responsive-font{
+    font-size: 16px;
+}
+
+.responsive-size{
+    width:20px; height:20px; 
+}
+.responsive-position{
+    position: relative; 
+    left: -135px; 
+    z-index: 10; 
+    top: 50px;
+}
+
+.responsive-icon{
+    width:13px; height:13px; 
+}
+.noSpin::-webkit-inner-spin-button, 
+    .noSpin::-webkit-outer-spin-button { 
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+@media screen and (max-width: 750px){
+    .responsive-font{
+    font-size: 12px;
+}
+.responsive-size{
+    width:16px; height:16px; 
+}
+
+.responsive-icon{
+    width:10px; height:10px; 
+}
+}
+@media screen and (max-width: 500px){
+    .responsive-position{
+        left: -200px;
+        right: auto;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .responsive-position{
+        left: -250px;
+        right: auto;
+    }
+}

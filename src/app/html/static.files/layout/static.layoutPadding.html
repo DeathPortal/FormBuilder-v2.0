@@ -1,0 +1,16 @@
+<div class="row">
+            <span class="responsive-font" style="width: 100%; text-align: center;">Padding
+                <div class="dropdown-divider"></div>
+            </span>
+            
+            <table>
+                <tr>
+                <td><edge-label [label]="label[0]"></edge-label></td><td><input [(ngModel)] = "paddingTop" (change) = "changePadding()" class="form-control" type="number" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','paddingTop']" (response)="processResponseTop($event)"></units-menu></td>
+                <td><edge-label [label]="label[1]"></edge-label></td><td><input [(ngModel)] = "paddingBottom" (change) = "changePadding()" class="form-control" type="number" style="width: 40px;font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','paddingBottom']" (response)="processResponseBottom($event)"></units-menu></td>
+                </tr>
+                <tr>
+                <td><edge-label [label]="label[2]"></edge-label></td><td><input [(ngModel)] = "paddingLeft" (change) = "changePadding()" class="form-control" type="number" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','paddingLeft']" (response)="processResponseLeft($event)"></units-menu></td>
+                <td><edge-label [label]="label[3]"></edge-label></td><td><input [(ngModel)] = "paddingRight" (change) = "changePadding()" class="form-control" type="number" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','paddingRight']" (response)="processResponseRight($event)"></units-menu></td>
+                </tr>
+            </table>
+        </div>

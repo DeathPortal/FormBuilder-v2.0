@@ -1,0 +1,1 @@
+{"version":3,"file":"static.vertical.alignment.js","sourceRoot":"","sources":["static.vertical.alignment.ts"],"names":[],"mappings":";;;;;;;AAAA,sCAAyC;AAOzC,IAAa,gCAAgC;IAA7C;IACA,CAAC;IAAD,uCAAC;AAAD,CAAC,AADD,IACC;AADY,gCAAgC;IAN5C,gBAAS,CAAC;QACP,QAAQ,EAAE,oBAAoB;QAC9B,WAAW,EAAE,2DAA2D;QACxE,SAAS,EAAE,CAAC,yBAAyB,EAAC,kBAAkB,CAAC;KAE5D,CAAC;GACW,gCAAgC,CAC5C;AADY,4EAAgC"}

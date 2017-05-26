@@ -1,0 +1,122 @@
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Arvo|Brawler|Cinzel|Cormorant+Garamond|Crimson+Text|EB+Garamond|Gilda+Display|Lora|Noto+Serif|Playfair+Display|Playfair+Display+SC|Radley|Slabo+27px|Ultra&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Abel|Acme|Anton|Cuprum|Exo|Fjalla+One|Lato|Maven+Pro|Miriam+Libre|Open+Sans|Open+Sans+Condensed:300|Quicksand|Roboto|Source+Sans+Pro|Yanone+Kaffeesatz&subset=cyrillic,cyrillic-ext,greek,greek-ext,hebrew,latin-ext,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Chonburi|Erica+One|Forum|Fredoka+One|Kranky|Life+Savers|Lobster|Lobster+Two|Love+Ya+Like+A+Sister|Oleo+Script|Patua+One|Poiret+One|Righteous|Special+Elite&subset=cyrillic,cyrillic-ext,latin-ext,thai,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush|Clicker+Script|Cookie|Dancing+Script|Gloria+Hallelujah|Great+Vibes|Indie+Flower|Kaushan+Script|Pacifico|Pinyon+Script|Qwigley|Reenie+Beanie|Satisfy|Tangerine|Yellowtail');
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro|Cousine|Cutive+Mono|Droid+Sans+Mono|Fira+Mono|Inconsolata|Nova+Mono|Overpass+Mono|Oxygen+Mono|PT+Mono|Roboto+Mono|Share+Tech+Mono|Source+Code+Pro|Space+Mono|Ubuntu+Mono|VT323');
+.nav-item{
+    cursor: pointer;
+}
+
+.no-padding{
+    padding: 0px;
+}
+.no-dropdown::after {
+    display:none !important;
+}
+.selectedEle{
+    background: none;
+}
+
+.selectedEle:hover
+{
+    background: rgba(0,0,128,0.01) !important;
+}
+
+.menu-dropdown{
+      position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #292b2c;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+#container_001{
+background: rgba(226,226,226,1);
+background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
+}
+:host /deep/ .ui-resizable{
+    resize: both;
+    overflow: auto;
+}
+
+.item-dropdown
+{
+    width:125px !important;
+    padding: 5px;
+    padding-left:20px; 
+    text-align: left;
+    cursor: pointer;
+}
+
+.item-dropdown:hover
+{
+    background: #EEE;
+}
+
+.menu-dropdown-left {
+  right: 0;
+  left: auto;
+}
+
+.responsive-font{
+    font-size: 16px;
+}
+
+.responsive-size{
+    width:20px; height:20px; 
+}
+
+.responsive-position{
+    position: relative; 
+    left: -135px; 
+    z-index: 10; 
+    top: 50px;
+}
+.responsive-icon{
+    width:13px; height:13px; 
+}
+
+@media screen and (max-width: 750px){
+    .responsive-font{
+    font-size: 12px;
+}
+.responsive-size{
+    width:16px; height:16px; 
+}
+
+.responsive-icon{
+    width:10px; height:10px; 
+}
+}
+
+@media screen and (max-width: 500px){
+    .responsive-position{
+        left: -200px;
+        right: auto;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .responsive-position{
+        left: -250px;
+        right: auto;
+    }
+}

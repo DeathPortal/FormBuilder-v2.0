@@ -1,0 +1,22 @@
+<div class="row" [style.height]="windowSize<=500?'100%':''">
+            <div class="col-3" style="padding:2px;">
+               <button [style.outline] = "align=='left'? '2px solid #777': ''" (click) = "textAlign('left');" class="btn btn-default responsive-font" [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}">
+                   <span class="fa fa-align-left"></span>
+                </button>
+            </div>
+            <div class="col-3" style="padding:2px;">
+                 <button [style.outline] = "align=='center'? '2px solid #777': ''" (click) = "textAlign('center');" class="btn btn-default responsive-font" [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}">
+                     <span class="fa fa-align-center"></span>
+                </button>
+            </div>
+            <div class="col-3" style="padding:2px;">
+                <button [style.outline] = "align=='right'? '2px solid #777': ''" (click) = "textAlign('right');" class="btn btn-default responsive-font" [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}">
+                     <span class="fa fa-align-right"></span>
+                </button>
+            </div>
+            <div class="col-3" style="padding:2px;">
+               <button [style.outline] = "align=='justify'? '2px solid #777': ''" (click) = "textAlign('justify');" class="btn btn-default responsive-font" [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}">
+                   <span class="fa fa-align-justify"></span>
+                </button>
+            </div>
+        </div>

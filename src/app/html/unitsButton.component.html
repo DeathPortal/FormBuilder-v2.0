@@ -1,0 +1,8 @@
+<div ngbDropdown class="dropdown" style="width:40px; padding-right:2px;">
+                <button class="btn btn-secondary dropdown-toggle no-dropdown responsive-font" type="button" id="dropdownMenuButton" data-toggle="dropdown" ngbDropdownToggle style="width:40px; padding:2px; padding-right:0px; content: none;">
+                    {{selectedUnit}}
+                </button>
+                <div class="dropdown-menu  responsive-font" aria-labelledby="dropdownMenuButton" style="width:45px; min-width:35px; padding:0px; margin:0px;">
+                     <div *ngFor="let unit of units" style="text-align: center;" class="dropdown-item no-padding" (click)="onchange(unit);">{{unit}}</div>
+                </div>
+             </div>

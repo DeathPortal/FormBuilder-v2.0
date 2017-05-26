@@ -1,0 +1,175 @@
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Arvo|Brawler|Cinzel|Cormorant+Garamond|Crimson+Text|EB+Garamond|Gilda+Display|Lora|Noto+Serif|Playfair+Display|Playfair+Display+SC|Radley|Slabo+27px|Ultra&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+
+
+.nav-item{
+    cursor: pointer;
+}
+
+.no-padding{
+    padding: 0px;
+}
+.no-dropdown::after {
+    display:none !important;
+}
+
+._scrollBar-hover-x{
+    overflow-x: hidden !important;
+}
+._scrollBar-hover-x:hover{
+    overflow-x: auto !important;
+}
+
+._scrollBar-hover-y{
+    overflow-y: hidden !important;
+}
+._scrollBar-hover-y:hover{
+    overflow-y: auto !important;
+}
+
+._scrollBar::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+._scrollBar::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+}
+
+._scrollBar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(left, #fff, #e4e4e4);
+  border: 1px solid #aaa;
+}
+
+._scrollBar::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+._scrollBar::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(left, #22ADD4, #1E98BA);
+}
+
+
+#_componentsButton{
+    box-shadow: rgb(28, 27, 24) 0px 1px 0px 0px; 
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+    border-top-right-radius: 15px; 
+    border-bottom-right-radius: 15px;
+    border: none;
+    outline: none;
+    display: inline-block; 
+    cursor: pointer; color: rgb(80, 87, 57); 
+    font-family: Arial; font-size: 14px; 
+    font-weight: bold; padding: 32px 5px; 
+    text-decoration: none; 
+    text-shadow: rgb(255, 255, 255) 0px 1px 0px;
+}
+:host /deep/ .ui-resizable{
+    resize: both;
+    overflow: hidden;
+}
+#_componentsButton:active{
+    outline: none;
+    border: none;
+}
+#_componentsButton:hover{
+    outline: none;
+    border: none;
+    background: -moz-linear-gradient(top, #f6f6f6 0%, #e1e1e1 50%, #f1f1f1 51%, #ffffff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f6f6f6 0%, #e1e1e1 50%, #f1f1f1 51%, #ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f6f6f6 0%, #e1e1e1 50%, #f1f1f1 51%, #ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+}
+
+.menu-dropdown{
+      position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #292b2c;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+:host /deep/ .drawBorder{
+    outline: 2px solid rgb(0,0,255) !important;
+}
+
+:host /deep/ .selectedEle{
+}
+
+:host /deep/ .selectedEle:hover{
+    background: rgba(117, 138, 255, 0.74) !important;
+}
+
+.item-dropdown
+{
+    width:125px !important;
+    padding: 5px;
+    padding-left:20px; 
+    text-align: left;
+    cursor: pointer;
+}
+
+.item-dropdown:hover
+{
+    background: #EEE;
+}
+
+.menu-dropdown-left {
+  right: 0;
+  left: auto;
+}
+
+.menu-dropdown-center {
+  right: auto;
+  left: auto;
+}
+
+.responsive-position{
+    position: relative; 
+    left: -135px; 
+    z-index: 10; 
+    top: 50px;
+}
+
+.responsive-font{
+    font-size: 16px;
+}
+
+@media screen and (max-width: 750px){
+    .responsive-font{
+    font-size: 12px;
+}
+}
+
+@media screen and (max-width: 500px) and (min-width: 400px){
+    .responsive-position{
+        left: -200px;
+        right: auto;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .responsive-position{
+        left: -250px;
+        right: auto;
+    }
+}

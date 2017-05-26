@@ -1,0 +1,38 @@
+<div class="row" style="width: 280px; height: 280px; background: #A1A1A1; border-radius: 5px; margin-left: 20px; padding: 5px;">
+<div class="col-12" style=" padding: 0px; margin: 0; height: 30px;">
+    <div class="dropdown" style="width: 100%; ">
+    <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 100%;">
+        {{selectedColorOption}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:100%;">
+        <div class="dropdown-item" style="width: inherit;" (click) = "selectedColorOption = 'Palettes'" >Palettes</div>
+        <div class="dropdown-item" style="width: inherit;" (click) = "selectedColorOption = 'Color Picker'">Color Picker</div>
+        <div class="dropdown-item" style="width: inherit;" (click) = "selectedColorOption = 'Gradient'">Gradient</div>
+    </div>
+    </div>
+</div>
+<div *ngIf="selectedColorOption=='Palettes'" class="col" style="height: 200px;">
+    <div *ngFor="let palettes of palettesStore" class="row" style="padding:0px; margin: 0 auto; width:90%;">
+        <div *ngFor="let palette of palettes" [style.background]="palette" style="width: 16px; height: 16px; margin: 1px;" (click) = "onSelect(palette)"></div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="row" style="padding:0px; margin: 0 auto; width:90%;">
+        <div *ngFor="let color of webColors" [style.background]="color" style="width: 11px; height: 11px; margin: 1px;" (click) = "onSelect(color)"></div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="row">
+        <div class="col-5">
+            <input class="form-control" disabled="disabled" [style.background]="selectedColor" [(ngModel)]="selectedColor" placeholder="color-code" style="width: 100%; font-size: 12px;">
+        </div>
+        <div class="col-3">
+            <button class="btn btn-sm btn-success" (click) = "okStatus()">Ok</button>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-sm btn-danger" (click) = "cancelStatus()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<colorsat (response) = "processResponse($event);" *ngIf="selectedColorOption=='Color Picker'" class="col" style="padding: 2px; margin: 0px; margin-top: 20px;"></colorsat>
+<gradient-component (reply) = "processResponse($event);" *ngIf="selectedColorOption=='Gradient'" class="col" style="padding: 2px; margin: 0px; margin-left: 20px;"></gradient-component>
+</div>

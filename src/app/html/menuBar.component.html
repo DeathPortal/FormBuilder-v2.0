@@ -1,0 +1,190 @@
+<div *ngIf="windowSize > 500" style="height: 150px;">
+<ul class="nav nav-tabs" style="height:30%;">
+  <li class="nav-item"><h4>FormBuilder v2.0 &nbsp; &nbsp;</h4></li>
+  <li class="nav-item" (click) = "changeMenu('menu')">
+    <span [class.active]="menuType == 'menu'" [ngStyle]="{'background-color': menuType == 'menu'? '#F5F5F5' : ''}" class="nav-link active">Menu</span>
+    
+  </li>
+  <li class="nav-item" (click) = "changeMenu('attr')">
+    <span [class.active]="menuType == 'attr'" [ngStyle]="{'background-color': menuType == 'attr'? '#F5F5F5' : ''}" class="nav-link">Attributes</span>
+  </li>
+  <li class="nav-item" (click) = "changeMenu('styles')">
+    <span [class.active]="menuType == 'styles'" [ngStyle]="{'background-color': menuType == 'styles'? '#F5F5F5' : ''}" class="nav-link">Styles</span>
+  </li>
+</ul>
+<div *ngIf="menuType == 'menu'" style="height:80%;"><menu-bar></menu-bar></div>
+<div *ngIf="menuType == 'attr'" class="_scrollBar _scrollBar-hover-x" style="height:80%; overflow-y: hidden; overflow-x: auto; min-width: inherit; width:100%;"><attr-component [style.width]="(attrcols*200)+'px'"  class="row" style="padding: 0px; padding-left: 30px; height: 100%;"></attr-component></div>
+<div *ngIf="menuType == 'styles'" class="_scrollBar _scrollBar-hover-x" style="height:80%; overflow-y: hidden; overflow-x: auto; min-width: inherit; width:100%;"><style-component [style.width]="(stylecols*200)+'px'" class="row" style="padding: 0px; padding-left: 30px; height: 100%;"></style-component></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="windowSize <= 500" style="background: #F5F5F5; padding-left: 5px; height:60px;">
+  <div class="row" style="height:100%;">
+    <div class="col-4" style="padding-right:0px;">
+      <div class="btn-group" style="height:100%; width:100%;">
+      <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:30%; min-width:40px; height:100%;">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm" style="width: 70%; min-width:60px; height:100%; font-size:11px;">{{menu}}</button>
+        <div class="dropdown-menu">
+          <div class="dropdown-item" (click) = "menu = 'Alignment'" style="cursor: pointer;" >Alignment</div>
+          <div class="dropdown-item" (click) = "menu = 'Text Style'" style="cursor: pointer;" >Text Style</div>
+          <div class="dropdown-item" (click) = "menu = 'Layout'" style="cursor: pointer;" >Layout</div>
+          <div class="dropdown-item" (click) = "menu = 'Border'" style="cursor: pointer;" >Border</div>
+          <div class="dropdown-item" (click) = "menu = 'Others'" style="cursor: pointer;" >Others</div>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item" (click) = "menu = 'Export'" style="cursor: pointer;" >Export</div>
+        </div>
+      </div>
+      </div>
+      <div class="col-8"  *ngIf = "menu == 'Alignment'" style="background:rgb(221,221,221);">
+        <div class="row" style="height:100%;">
+          <div class="col-6" [class] = "windowSize > 360?'col-6':'col-9'"><horizontal-alignment [selectedEle] = 'selectedEle'></horizontal-alignment></div>
+          <div class="col-6" *ngIf = "windowSize > 360" style="padding-left: 20px;"><vertical-alignment [selectedEle] = 'selectedEle'></vertical-alignment></div>
+          <div class="col-3" *ngIf = "windowSize <= 360">
+          <div class="btn-group" style="width:100%; height:100%;">
+            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%; height:100%;">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu menu-dropdown-left">
+                <div style="margin-left: 20px;"><vertical-alignment [selectedEle] = 'selectedEle'></vertical-alignment></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-8"  *ngIf = "menu == 'Text Style'" style="background:rgb(221,221,221);">
+        <div class="row" style="height:100%;">
+          <div class="col-5" [class] = "windowSize > 360?'col-5':'col-9'"><textstyle1-style [selectedEle] = 'selectedEle' class="row" style="height:100%;"></textstyle1-style></div>
+            <div class="col-5" *ngIf = "windowSize > 360"><textstyle2-style [selectedEle] = 'selectedEle' class="row" style="height:100%;"></textstyle2-style></div>
+            <div class="col-2" *ngIf = "windowSize > 360" style="padding:0px;">
+                <div class="dropdown" style="height:100%;">
+                        <button type="button" (click) = "showFontFamily = !showFontFamily" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" style="height:100%; width:100%;">
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div [hidden]="!showFontFamily" class="menu-dropdown menu-dropdown-left"  aria-labelledby="dropdownMenuButton" style="width: 250px; padding-left: 20px; right: 30px;">
+                            <textstyle-font [selectedEle] = 'selectedEle'></textstyle-font>
+                        </div>
+                    </div>
+    
+              </div>
+              <div class="col-3" *ngIf = "windowSize <= 360">
+              <div class="btn-group" style="height:100%;">
+                <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" (click)="showFontFamily = !showFontFamily" style="height:100%; width: 100%;">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <div [hidden]="!showFontFamily" class="menu-dropdown menu-dropdown-left" style="width: 250px; padding-left: 20px; right:50px;">
+                    <div style="margin-left: 20px;"><textstyle-font [selectedEle] = 'selectedEle' class="row"></textstyle-font><textstyle2-style [selectedEle] = 'selectedEle' class="row"></textstyle2-style></div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-8"  *ngIf = "menu == 'Layout'">
+        <div class="row" style="height:100%;">
+          <div class="col-6" style="min-width: 65px; padding-left:0px; padding-right:0px;">
+            <div class="dropdown" style="width: 100%; height: 100%;">
+                <button class="btn btn-sm btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" (click)="showMargin = !showMargin" aria-haspopup="true" aria-expanded="false" style="width: 100%; height: 100%;">
+                    Margin
+                </button>
+                <div [hidden]="!showMargin" class="menu-dropdown menu-dropdown-left"  aria-labelledby="dropdownMenuButton" style="width: 200px; padding-left: 20px; right:-50px;">
+                     <layout-margin [selectedEle] = 'selectedEle' [label]="[['Top','T','T'],['Bottom','B','B'],['Left','L','L'],['Right','R','R']]"></layout-margin>
+                </div>
+             </div>
+
+          </div>
+
+          <div class="col-6" style="padding-left: 0px;">
+            <div class="dropdown" style="width: 100%; height: 100%;">
+                <button class="btn btn-sm btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" (click)="showPadding = !showPadding" aria-haspopup="true" aria-expanded="false" style="width: 100%; height: 100%;">
+                    Padding
+                </button>
+                <div [hidden]="!showPadding" class="menu-dropdown menu-dropdown-left"  aria-labelledby="dropdownMenuButton" style="width: 200px; padding-left: 20px;">
+                      <layout-padding [selectedEle] = 'selectedEle' [label]="[['Top','T','T'],['Bottom','B','B'],['Left','L','L'],['Right','R','R']]"></layout-padding>
+                </div>
+             </div>
+
+          </div>
+            
+        </div>
+      </div>
+
+
+
+
+      <div class="col-8"  *ngIf = "menu == 'Border'">
+        <div class="row" style="height:100%;">
+          <div *ngIf="windowSize >= 430" class="col-6" style="display:flex; align-items: center;">
+            <border-static [selectedEle] = 'selectedEle'></border-static>
+          </div>
+          <div *ngIf="windowSize < 430" class="col-6" style="padding-left: 0px; padding-right: 0px;">
+            <div class="dropdown" style="width: 100%; height: 100%; ">
+                <button class="btn btn-sm btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" (click)="showBorder = !showBorder" aria-haspopup="true" aria-expanded="false" style="width: 100%; height: 100%;">
+                    Style
+                </button>
+                <div [hidden]="!showBorder" class="menu-dropdown"  aria-labelledby="dropdownMenuButton" style="width: 180px; padding-left: 20px; left: -70px;">
+                     <div class="row">
+                        <border-static [selectedEle] = 'selectedEle'></border-static>
+                    </div>
+                </div>
+             </div>
+          </div>
+
+          <div class="col-6" style="padding-left: 0px; padding-right: 0px;">
+            <div class="dropdown" style="width:100%; height: 100%;">
+                <button class="btn btn-sm btn-secondary dropdown-toggle responsive-font" type="button" id="dropdownMenuButton" (click)="showBorderRadius = !showBorderRadius" aria-haspopup="true" aria-expanded="false" style="width:100%; height: 100%;">
+                    Radius
+                </button>
+                <div [hidden]="!showBorderRadius" class="menu-dropdown menu-dropdown-left" aria-labelledby="dropdownMenuButton" style="width: 240px; padding-left: 20px;">
+                      <border-radius-static [selectedEle] = 'selectedEle'></border-radius-static>
+                </div>
+             </div>
+
+          </div>
+            
+        </div>
+      </div>
+
+
+
+      <div class="col-8"  *ngIf = "menu == 'Others'">
+        <div class="row" style="height: 100%;">
+          <div class="col-6" style="padding-left: 0px; padding-right: 0px;">
+            <button class="btn btn-sm btn-secondary responsive-font" type="button" id="dropdownMenuButton" style="width:100%; height:100%;">
+                    Styles
+                </button>
+          </div>
+
+          <div class="col-6" style="padding-left: 0px; padding-right: 0px;">
+            <button class="btn btn-sm btn-default responsive-font" style="width:100%; height: 100%;"><edge-label [label]="['Javascript Editor','Javascript Editor','JS Editor']"></edge-label></button>
+          </div>
+            
+        </div>
+      </div>
+
+
+
+  </div>
+</div>
+
+
+

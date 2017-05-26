@@ -1,0 +1,18 @@
+<div class="row">
+        
+            <div class="col-1" style="padding:0px; display: table; padding-left: 15px;">
+                <edge-label [label]="['Border-Radius','Border-Radius','']" class="responsive-font" style="display: table-cell; vertical-align: middle; font-size: 12px;"></edge-label>
+            </div>
+            <div class="col-8" style="padding-left: 0px;">
+                <table>
+                <tr>
+                <td><edge-label [label]="['TL','TL','TL']"></edge-label></td><td><input [(ngModel)] = "borderTopLeftRadius" (change) = "changeBorderRadius();" class="form-control" type="number" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','borderTopLeftRadius']" (response)="processResponseTopLeft($event)"></units-menu></td>
+                <td><edge-label [label]="['TR','TR','TR']"></edge-label></td><td><input [(ngModel)] = "borderTopRightRadius" (change) = "changeBorderRadius();" class="form-control" type="number" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','borderTopRightRadius']" (response)="processResponseTopRight($event)"></units-menu></td>
+                </tr>
+                <tr>
+                <td><edge-label [label]="['BL','BL','BL']"></edge-label></td><td><input [(ngModel)] = "borderBottomLeftRadius" (change) = "changeBorderRadius();" class="form-control" type="number" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','borderBottomLeftRadius']" (response)="processResponseBottomLeft($event)"></units-menu></td>
+                <td><edge-label [label]="['BR','BR','BR']"></edge-label></td><td><input [(ngModel)] = "borderBottomRightRadius" (change) = "changeBorderRadius();" class="form-control" type="number" style="width: 40px; font-size: 12px; padding:4px;"></td><td><units-menu [refPath]="['style','borderBottomRightRadius']" (response)="processResponseBottomRight($event)"></units-menu></td>
+                </tr>
+            </table>
+            </div>
+     </div>

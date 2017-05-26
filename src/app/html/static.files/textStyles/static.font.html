@@ -1,0 +1,37 @@
+<div class="form-inline">
+         <span class="responsive-font"> Font &nbsp; </span>
+         <div class="dropdown"  style="padding: 0px; width:100px;">
+            <button (mousedown) = "fetchSelectedRange();" [style.fontFamily]="selectedFont[0] +','+ selectedFont[1]" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  style="padding:9px; width:85px; word-wrap: break-word; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; width:100%;">
+                {{selectedFont[0]}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height: 200px; overflow-y: scroll;">
+                <div class="dropdown-divider"></div>
+                <div style="padding-left: 20px; background: #555; width: 100%; padding: 5px; color: #FFF;">Serif</div>
+                <div class="dropdown-divider"></div>
+                <div (click) = "updateFontFamily(font);" class="dropdown-item responsive-font" [style.fontFamily]="font[0] +','+ font[1]" *ngFor = "let font of serifFonts">{{font[0]}}</div>
+                 <div class="dropdown-divider"></div>
+                <div style="padding-left: 20px; background: #555; width: 100%; padding: 5px; color: #FFF;">Sans-Serif</div>
+                <div class="dropdown-divider"></div>
+                <div (click) = "updateFontFamily(font);" class="dropdown-item responsive-font" [style.fontFamily]="font[0] +','+ font[1]" *ngFor = "let font of sansSerifFonts">{{font[0]}}</div>
+                 <div class="dropdown-divider"></div>
+                <div style="padding-left: 20px; background: #555; width: 100%; padding: 5px; color: #FFF;">Display</div>
+                <div class="dropdown-divider"></div>
+                <div (click) = "updateFontFamily(font);" class="dropdown-item responsive-font" [style.fontFamily]="font[0] +','+ font[1]" *ngFor = "let font of displayFonts">{{font[0]}}</div>
+                 <div class="dropdown-divider"></div>
+                <div style="padding-left: 20px; background: #555; width: 100%; padding: 5px; color: #FFF;">Handwriting</div>
+                <div class="dropdown-divider"></div>
+                <div (click) = "updateFontFamily(font);" class="dropdown-item responsive-font" [style.fontFamily]="font[0] +','+ font[1]" *ngFor = "let font of handwritingFonts">{{font[0]}}</div>
+                 <div class="dropdown-divider"></div>
+                <div style="padding-left: 20px; background: #555; width: 100%; padding: 5px; color: #FFF;">Monospace</div>
+                <div class="dropdown-divider"></div>
+                <div (click) = "updateFontFamily(font);" class="dropdown-item responsive-font" [style.fontFamily]="font[0] +','+ font[1]" *ngFor = "let font of monospaceFonts">{{font[0]}}</div>
+            </div>
+            </div>
+
+
+
+            <!-- <select class="form-control responsive-font" style="padding: 0px; width:100px;">
+                <option class="responsive-font" [style.fontFamily]="font +', serif'" *ngFor = "let font of serifFonts">{{font}}</option>
+            </select> -->
+            <input [(ngModel)] = "fontSize" (blur) = "updateFontSize();" (mousedown) = "fetchSelectedRange();" class="form-control responsive-font" type="text" style="width:50px; padding:9px;">
+        </div>

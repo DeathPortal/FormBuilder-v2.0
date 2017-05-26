@@ -1,0 +1,57 @@
+
+   <div class="row" style="height: 120px;">
+     <div class="col-7">
+        <div id="" style="width:120px; height:120px; background-image: url(app/img/checkers.png); background-repeat: repeat;">
+            <div #preview style="width:100%; height: 100%;"></div>
+        </div>
+     </div>
+     <div class="col-2">
+         <div class="row" style="padding-bottom: 5px;">
+            <button (click) ="changeDirection('linear-gradient')" class="btn btn-default" style="padding:2px; width: 35px; height: 35px;"><i class="fa fa-arrows-h" style="font-size: 25px;"></i></button>
+         </div>
+         <div class="row" style="padding-bottom: 5px;">
+            <button (click) ="changeDirection('radial-gradient')" class="btn btn-default" style="padding:2px; width: 35px; height: 35px;"><i class="fa fa-circle-o" style="font-size: 25px; -ms-transform: rotate(45deg);-webkit-transform: rotate(45deg); transform: rotate(45deg);"></i></button>
+         </div>
+          <div class="row" style="padding-bottom: 5px; width:50px;">
+            <div class="col-5" style="padding:2px; width: 35px; height: 35px;"><i [ngStyle]="{'transform':'rotate('+degree+'deg)'}" class="fa fa-arrow-circle-o-right" aria-hidden="true" style="font-size: 25px;"></i></div>
+            <div class="col" style="padding:2px;"><input (focus)="focusTimer()" (blur)="blurTimer()" [disabled] = "disableDegree==false" [(ngModel)]="degree" class="noSpin" style="width:100%; height:20px; font-size:12px; background: none;" type="number"></div>
+         </div>
+     </div>
+   </div>
+
+   <div class="row" style="width: 250px; height:80px;">
+       <div class="container" style="width: 100%; height: 100%;">
+           <div _id="_transparency" class="row" style="height: 30%; position:relative; padding-left:5px; cursor: copy;" (mousedown)="addTransperancy($event);">
+            <div _id="move" [style.left] = "(trans.pos-1)+'%'" [style.zIndex]="trans.z" style="position: absolute; bottom: 0px; left: 0px; cursor:move;" *ngFor="let trans of transparency; let i = index" (dblclick)="changeOpacity($event,trans);" (mousedown) = "moveTransparency($event,trans);">
+                  <div [style.background] = "'rgb('+(trans.color)+','+(trans.color)+','+(trans.color)+')'" style="width: 12px; height: 15px; position: absolute; bottom: 7px; left: 0px; z-index:0;"></div>
+                  <div style="width: 12px; height: 10px; position: absolute; bottom: 5px; left: 0px; z-index:1;"><i style="font-size: 20px;" class="fa fa-caret-down" aria-hidden="true"></i></div>
+              </div>
+           </div>
+           <div class="row" style="height: 40%; padding-left: 5px; position: relative;">
+                <div style="width:100%; height: 100%; background-image: url(app/img/checkers.png); background-repeat: repeat; background-size: 5%; position:absolute; top:0; left:3px;z-index:0;"></div>
+                <div #previewSm style="width:100%; height: 100%; position: absolute; top:0; left:3px; z-index:1;"></div>
+           </div>
+           <div class="row" style="height: 30%; position:relative; padding-left:5px; cursor: copy;" (mousedown)="addColor($event)">
+              <div _id="move" [style.left] = "(color.pos-1)+'%'" [style.zIndex] = "color.z" style="cursor:move; position: absolute; top: 0px; left: 0px;" *ngFor="let color of colors" (dblclick)="changeColor($event,color);" (mousedown) = "moveColor($event,color);">
+                  <div style="width: 12px; height: 10px; position: absolute; top: -10px; left: 0px; z-index:1;"><i style="font-size: 20px;" class="fa fa-caret-up" aria-hidden="true"></i></div>
+                  <div [style.background] = "'rgb('+color.red+','+color.green+','+color.blue+')'" style="width: 12px; height: 15px; position: absolute; top: 5px; left: 0px; z-index: 0"></div>
+              </div>
+           </div>
+       </div>
+   </div>
+   <div class="row" style="width:250px; height:30px;">
+        <div class='col-4'>
+          <button (click)="sendBackground();" class="btn btn-success" style="font-size: 14px;">Ok</button>
+        </div>
+        <div class='col-4'>
+        <button (click)="cancelBackground();" class="btn btn-danger" style="font-size: 14px;">Cancel</button>
+        </div>
+   </div>
+<div _id = "unhide" [hidden] = "!opacity.opacity" style="background: linear-gradient(rgb(234, 224, 194) 5%, rgb(204, 194, 166) 100%) rgb(234, 224, 194); border-radius: 15px; color: rgb(80, 87, 57); font-family: Arial; font-size: 14px; font-weight: bold; padding: 12px 16px; text-decoration: none; text-shadow: rgb(255, 255, 255) 0px 1px 0px; position: relative; top: 20px; left:-25px; width: 260px;">
+  <input class="" [value]="opacity.opacityValue" type="range" min="0" max="100" (change)="updateOpacity($event);" style="width:100%;">
+</div>
+<div _id = "unhide" style="width:260px; height: 260px; padding: 10px; position: relative; top: 20px; left:-25px; background: #A1A1A1;" *ngIf = "color.show">
+  <colorsat (response) = "processResponse($event);" class="col" style="padding: 2px; margin: 0px; margin-top: 20px;"></colorsat>
+</div>
+
+  

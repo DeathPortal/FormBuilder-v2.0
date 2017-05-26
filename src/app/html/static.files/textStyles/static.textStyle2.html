@@ -1,0 +1,13 @@
+<div class="col-4" style="padding:2px; position: relative;">
+                <button class="btn btn-default responsive-font" [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}" (click)="colorPicker2 = true;" (mousedown) = "fetchSelectedRange();">
+                   <span class="fa fa-font"></span>
+                </button>
+                <colorpicker style="position: absolute; left: -125px; top: 50px;" class="responsive-position" [hidden]="!colorPicker2"  (response)="processColorResponse($event)"></colorpicker>
+            </div>
+            <div class="col-4" style="padding:2px; position: relative;">
+                <button (click)="marker=!marker" class="btn btn-default responsive-font" [ngStyle]="windowSize<=500?{'padding':'0px', 'height':'100%', 'width':'100%', 'border-radius':'0px'}:{'padding':'3px'}" (mousedown) = "fetchSelectedRange();">
+                   <img src="app/img/text highlight.png" width="16" height="16"/>
+                </button>
+                <marker-color [hidden]="!marker" style="position: absolute; left: -100px; top: 50px; width:100%; height: 100%" (response)="processMarkerResponse($event)"></marker-color>
+            </div>
+<color-tool class="col-4" (response)="processResponse($event);" [defaultColor]="['style','background']" style="padding:2px; display:flex; align-items: center;"></color-tool>

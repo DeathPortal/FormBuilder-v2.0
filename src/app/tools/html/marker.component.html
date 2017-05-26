@@ -1,0 +1,21 @@
+<div class="row" style="width: 200px; height: 150px; background: #EEE;">
+        <div class="container-fluid" id="row" style="width: 75%;">
+            <div class="row" *ngFor = "let markerRow of markerColors">
+                <div *ngFor = "let marker of markerRow" class="col-2" style="height: 30px; padding: 2px;">
+                    <div [style.background] = "'#'+marker" style="width: 100%; height: 100%; cursor: pointer;" (click)="sendMarker('#'+marker)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="row" style="width: 75%;">
+           <div class="row" style="text-align: center; border: 1px solid black; padding: 2px; background: #DDD; cursor: pointer;" (click)="sendMarker('')">
+               <div class="col-1">
+                   <div style="border: 1px solid red; width: 25px; height: 25px; background: #FCF1C2;">
+                   </div>
+               </div>
+               <div class="col">
+               No Color
+               </div>
+           </div> 
+        </div>
+    </div>
