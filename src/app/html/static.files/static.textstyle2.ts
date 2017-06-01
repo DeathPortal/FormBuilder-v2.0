@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { Services } from '../../shared/shared.services2'
 @Component({
     selector: "textstyle2-style",
-    templateUrl: "./textStyles/static.textstyle2.html",
+    templateUrl: "./textStyles/static.textStyle2.html",
     styleUrls: ['./css/lib/bootstrap.css','./css/styles.css'],
         host: {
     '(window:resize)': 'onResize($event)'
