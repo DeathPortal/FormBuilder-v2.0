@@ -43,8 +43,8 @@ var AutoCompleteStyle = (function () {
             else {
                 this.filteredStyleList = [];
             }
-            if (this.filteredStyleList.length > 5) {
-                this.filteredStyleList = this.filteredStyleList.slice(0, 5);
+            if (this.filteredStyleList.length > 10) {
+                this.filteredStyleList = this.filteredStyleList.slice(0, 10);
             }
         }
         catch (err) { }
@@ -128,7 +128,7 @@ __decorate([
 AutoCompleteStyle = __decorate([
     core_1.Component({
         selector: "predictiveStyle-search",
-        template: "\n        <div class=\"row\" style=\"width: 10%; min-width:200px; padding: 5px; padding-left: 20px; display: inline-block; position: relative;\">\n            <div class=\"form-inline\" [ngClass]=\"valid?'form-inline':'has-danger'\">\n              <input (blur)=\"check()\" id=\"\" type=\"text\" class=\"validate filter-input form-control col-4\" style=\"padding: 5px;\" [(ngModel)]=\"query\" (keyup)=\"filter($event)\">\n              <span style=\"font-size: 20px;\">:</span>\n              <input (blur) = \"setStyle()\" id=\"\" type=\"text\" class=\"validate filter-input form-control col-4\" style=\"padding: 5px;\" [(ngModel)]=\"queryval\" (keyup)=\"filterStyle($event)\">\n            </div>\n        </div>\n            <div [style.top] = 'top+\"px\"' [style.left]= 'left+\"px\"' class=\"dropdown-menu\" *ngIf=\"filteredList.length > 0\" style=\"display:block;\">\n                <a class=\"item-dropdown\" (click)=\"select(item)\" *ngFor=\"let item of filteredList\">{{item}}</a>\n            </div>\n            <div [style.top] = 'top+\"px\"' [style.left]= 'left+\"px\"' class=\"dropdown-menu\" *ngIf=\"filteredStyleList.length > 0\" style=\"display:block;\">\n                <a class=\"item-dropdown\" (click)=\"selectStyle(item)\" *ngFor=\"let item of filteredStyleList\">{{item}}</a>\n            </div>\n        \n        ",
+        template: "\n        <div class=\"row\" style=\"width: 10%; min-width:200px; padding: 5px; padding-left: 20px; display: inline-block; position: relative;\">\n            <div class=\"form-inline\" [ngClass]=\"valid?'form-inline':'has-danger'\">\n              <input (blur)=\"check()\" id=\"\" type=\"text\" class=\"validate filter-input form-control col-4\" style=\"padding: 5px;\" [(ngModel)]=\"query\" (keyup)=\"filter($event)\">\n              <span style=\"font-size: 20px;\">:</span>\n              <input (blur) = \"setStyle()\" id=\"\" type=\"text\" class=\"validate filter-input form-control col-4\" style=\"padding: 5px;\" [(ngModel)]=\"queryval\" (keyup)=\"filterStyle($event)\">\n            </div>\n        </div>\n            <div [style.top] = 'top+\"px\"' [style.left]= 'left+\"px\"' class=\"dropdown-menu\" *ngIf=\"filteredList.length > 0\" style=\"display:block; width:300px;\">\n                <a class=\"item-dropdown\" (click)=\"select(item)\" *ngFor=\"let item of filteredList\">{{item}}</a>\n            </div>\n            <div [style.top] = 'top+\"px\"' [style.left]= 'left+\"px\"' class=\"dropdown-menu\" *ngIf=\"filteredStyleList.length > 0\" style=\"display:block;\">\n                <a class=\"item-dropdown\" (click)=\"selectStyle(item)\" *ngFor=\"let item of filteredStyleList\">{{item}}</a>\n            </div>\n        \n        ",
         styleUrls: ['./css/lib/bootstrap.css', './css/styles.css'],
         host: {
             '(document:click)': 'handleClick($event)',

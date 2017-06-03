@@ -12,15 +12,14 @@
     <span [class.active]="menuType == 'styles'" [ngStyle]="{'background-color': menuType == 'styles'? '#F5F5F5' : ''}" class="nav-link">Styles</span>
   </li>
   <li class="nav-item" (click) = "changeMenu('about')">
-    <span [class.active]="menuType == 'styles'" [ngStyle]="{'background-color': menuType == 'styles'? '#F5F5F5' : ''}" class="nav-link">About</span>
+    <span [class.active]="menuType == 'about'" [ngStyle]="{'background-color': menuType == 'about'? '#F5F5F5' : ''}" class="nav-link">About</span>
   </li>
 </ul>
 <div *ngIf="menuType == 'menu'" style="height:80%;"><menu-bar></menu-bar></div>
 <div *ngIf="menuType == 'attr'" class="_scrollBar _scrollBar-hover-x" style="height:80%; overflow-y: hidden; overflow-x: auto; min-width: inherit; width:100%;"><attr-component [style.width]="(attrcols*200)+'px'"  class="row" style="padding: 0px; padding-left: 30px; height: 100%;"></attr-component></div>
 <div *ngIf="menuType == 'styles'" class="_scrollBar _scrollBar-hover-x" style="height:80%; overflow-y: hidden; overflow-x: auto; min-width: inherit; width:100%;"><style-component [style.width]="(stylecols*200)+'px'" class="row" style="padding: 0px; padding-left: 30px; height: 100%;"></style-component></div>
-<div *ngIf="menuType == 'about'" style="height:80%;"><div class="row" style="margin-left: 50px;"><div class='col-2'><div class='row'>Project: FormBuilder-v2 (Beta)</div><div class='row'>Author: Dhanush S</div><div class='row'>Mail: dhanush.1993p@gmail.com</div></div></div>
+<div *ngIf="menuType == 'about'" style="height:80%;"><div class="row" style="margin-left: 50px;"><div class='col-12'><div class='row'>Project: FormBuilder-v2 (Beta)</div><div class='row'>Author: Dhanush S</div><div class='row'>Mail: dhanush.1993p@gmail.com</div></div></div></div>
 </div>
-
 
 
 
@@ -189,6 +188,4 @@
 
   </div>
 </div>
-
-
 

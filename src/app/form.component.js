@@ -560,6 +560,7 @@ var FormCanvasComponent = (function () {
     FormCanvasComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.subscription = this.selectedEle.touched.subscribe(function (item) { return _this.addElement(item); });
+        this.selectedEle.selectedElement = document.getElementById("_domContainer");
     };
     FormCanvasComponent.prototype.addElement = function (item) {
         this.target = this.selectedEle.getElement();

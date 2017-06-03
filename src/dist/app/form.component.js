@@ -560,6 +560,7 @@ var FormCanvasComponent = (function () {
     FormCanvasComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.subscription = this.selectedEle.touched.subscribe(function (item) { return _this.addElement(item); });
+        this.selectedEle.selectedElement = document.getElementById("_domContainer");
     };
     FormCanvasComponent.prototype.addElement = function (item) {
         this.target = this.selectedEle.getElement();
@@ -597,7 +598,15 @@ var FormCanvasComponent = (function () {
     };
     FormCanvasComponent.prototype.changeSelectElement = function (evt) {
         this.selectedEle.setElement(evt.srcElement);
-        evt.preventDefault();
+        if (evt.target.tagName != "SPAN") {
+            evt.preventDefault();
+        }
+    };
+    FormCanvasComponent.prototype.changeTouchElement = function (evt) {
+        this.selectedEle.setElement(evt.srcElement);
+        if (evt.target.tagName != "SPAN") {
+            evt.preventDefault();
+        }
     };
     FormCanvasComponent.prototype.textEvents = function (span) {
         var ele = this.selectedEle;

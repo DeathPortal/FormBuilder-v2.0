@@ -11,7 +11,7 @@ import { CSSProp } from '../shared/css.prop'
               <input (blur) = "setStyle()" id="" type="text" class="validate filter-input form-control col-4" style="padding: 5px;" [(ngModel)]="queryval" (keyup)="filterStyle($event)">
             </div>
         </div>
-            <div [style.top] = 'top+"px"' [style.left]= 'left+"px"' class="dropdown-menu" *ngIf="filteredList.length > 0" style="display:block;">
+            <div [style.top] = 'top+"px"' [style.left]= 'left+"px"' class="dropdown-menu" *ngIf="filteredList.length > 0" style="display:block; width:300px;">
                 <a class="item-dropdown" (click)="select(item)" *ngFor="let item of filteredList">{{item}}</a>
             </div>
             <div [style.top] = 'top+"px"' [style.left]= 'left+"px"' class="dropdown-menu" *ngIf="filteredStyleList.length > 0" style="display:block;">
@@ -49,8 +49,8 @@ export class AutoCompleteStyle{
         }else{
             this.filteredStyleList = [];
         }
-        if(this.filteredStyleList.length>5){
-            this.filteredStyleList = this.filteredStyleList.slice(0,5);
+        if(this.filteredStyleList.length>10){
+            this.filteredStyleList = this.filteredStyleList.slice(0,10);
         }
         }catch(err){}
     }

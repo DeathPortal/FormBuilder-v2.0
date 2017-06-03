@@ -1,6 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Alegreya|Arvo|Brawler|Cinzel|Cormorant+Garamond|Crimson+Text|EB+Garamond|Gilda+Display|Lora|Noto+Serif|Playfair+Display|Playfair+Display+SC|Radley|Slabo+27px|Ultra&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
 
+span,
+[contenteditable] {
+    -webkit-user-select: text;
+    user-select: text;
+}
 
 .nav-item{
     cursor: pointer;

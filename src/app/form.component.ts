@@ -564,6 +564,7 @@ export class FormCanvasComponent implements OnInit, OnDestroy{
 
      ngOnInit(){
         this.subscription = this.selectedEle.touched.subscribe((item: any) => this.addElement(item));
+        this.selectedEle.selectedElement = document.getElementById("_domContainer");
     }
     addElement(item: any){
         this.target = this.selectedEle.getElement();
@@ -598,7 +599,16 @@ export class FormCanvasComponent implements OnInit, OnDestroy{
 
     changeSelectElement(evt: any){
         this.selectedEle.setElement(evt.srcElement);
+        if(evt.target.tagName !="SPAN"){
         evt.preventDefault();
+        }
+    }
+
+    changeTouchElement(evt: any){
+        this.selectedEle.setElement(evt.srcElement);
+        if(evt.target.tagName !="SPAN"){
+        evt.preventDefault();
+        }
     }
 
     textEvents(span: any){
@@ -659,7 +669,6 @@ export class FormCanvasComponent implements OnInit, OnDestroy{
                             range.setEnd(_this.childNodes[_this.childNodes.length-1],_this.childNodes[_this.childNodes.length-1].textContent.length);
                             selection.removeAllRanges();
                             selection.addRange(range);
-                        
                         }
                     }, 1000); 
                 });

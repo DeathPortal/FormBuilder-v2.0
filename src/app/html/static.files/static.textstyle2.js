@@ -141,7 +141,7 @@ __decorate([
 StaticTextStyle2Component = __decorate([
     core_1.Component({
         selector: "textstyle2-style",
-        templateUrl: "./textStyles/static.textstyle2.html",
+        templateUrl: "./textStyles/static.textStyle2.html",
         styleUrls: ['./css/lib/bootstrap.css', './css/styles.css'],
         host: {
             '(window:resize)': 'onResize($event)'
